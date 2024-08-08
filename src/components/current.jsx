@@ -11,8 +11,8 @@ function Current() {
       units: "metric",
     },
     headers: {
-      "x-rapidapi-key": "07a3a0ce02msh750a06779dec130p108a96jsn11a986cd9d4c",
-      "x-rapidapi-host": "ai-weather-by-meteosource.p.rapidapi.com",
+      "x-rapidapi-key": import.meta.env.KEY,
+      "x-rapidapi-host": import.meta.env.HOST,
     },
   };
 
