@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../assets/gradient-blue.jpg);
+}
+
+.glasseffect {
+    /* From https://css.glass */
+    background: rgba(250, 249, 246, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(250, 249, 246, 0.48);
+}
