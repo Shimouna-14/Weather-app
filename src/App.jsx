@@ -69,9 +69,9 @@ function App() {
 
   return (
     <>
-      <div className="relatif w-screen h-screen">
+      <div>
         {/* ------------------- Header ------------------- */}
-        <header className="w-full py-6 glasseffect mb-5 flex flex-col justify-center items-center ">
+        <header className="w-full py-3 glasseffect mb-5 flex flex-col justify-center items-center ">
           <p className="m-2">
             {CurrentWeatherData.location}, {CurrentWeatherData.country}
           </p>
@@ -96,7 +96,7 @@ function App() {
         </header>
 
         {/* ------------------- Main ------------------- */}
-        <main className=" w-full px-9">
+        <main className="px-8">
           {/* Meteo actuel */}
           <div className="flex justify-between m:flex-col">
             {/* Premiere section de gauche : Affiche l'heure, le temps, la température et le ressenti actuel */}
@@ -116,7 +116,7 @@ function App() {
             </section>
 
             {/* Seconde section de droite : Affiche le vent, l'humidité et la visibilité */}
-            <section className="flex justify-between items-center glasseffect h-64 w-[45%] m:w-full m:mb-10 rounded-md p-8 text-lg">
+            <section className="flex justify-between items-center glasseffect h-64 m:h-auto w-[45%] m:w-full m:mb-10 rounded-md p-8 text-lg">
               <div className="text-center w-20">
                 <p>Vent</p>
                 <p>{CurrentWeatherData.wind} km/h</p>
@@ -126,7 +126,7 @@ function App() {
                 <p>{CurrentWeatherData.humidity} %</p>
               </div>
               <div className="text-center w-20">
-                <p>Visibkité</p>
+                <p>Visibiliité</p>
                 <p>{CurrentWeatherData.visibility} m</p>
               </div>
             </section>
@@ -135,17 +135,19 @@ function App() {
           {/* Meteo de deamin par heure : Affichant l'heure en le convertisant en objet Date, l'icône et la température*/}
           <div className="flex flex-col justify-around glasseffect w-full h-64 mb-6 rounded-md p-6">
             <p>Demain</p>
-            <div className="flex gap-7 justify-between overflow-x-scroll">
+            <div className="flex gap-5 justify-between overflow-x-scroll">
               {DailyData.map((data, index) => (
                 <div
                   key={index}
-                  className="h-40 px-6 bg-blue-100 rounded-md flex flex-col justify-around items-center"
+                  className="h-40 bg-blue-100 rounded-md flex flex-col justify-around items-center"
                 >
                   <p>{new Date(data.dt_txt).getHours()}h</p>
-                  <img
-                    src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`} // Affichage de l'icône correspondant au temps actuelle : https://openweathermap.org/weather-conditions
-                    alt={data.weather[0].description}
-                  />
+                  <span className="w-24 flex justify-center">
+                    <img
+                      src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`} // Affichage de l'icône correspondant au temps actuelle : https://openweathermap.org/weather-conditions
+                      alt={data.weather[0].description}
+                    />
+                  </span>
                   <p>{Math.round(data.main.temp)}°C</p>
                 </div>
               ))}
