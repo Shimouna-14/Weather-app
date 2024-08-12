@@ -126,7 +126,7 @@ function App() {
                 <p>{CurrentWeatherData.humidity} %</p>
               </div>
               <div className="text-center w-20">
-                <p>Visibiliité</p>
+                <p>Visibilité</p>
                 <p>{CurrentWeatherData.visibility} m</p>
               </div>
             </section>
