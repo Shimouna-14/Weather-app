@@ -31,6 +31,8 @@ function App() {
     }
   };
 
+  
+
   const [DailyData, setDailyWeatherData] = useState([]); // Tableau avec la meteo du lendemain toutes les 3 heures
 
   const fetchDailytWeather = async (city) => {
@@ -65,7 +67,6 @@ function App() {
   const handleClick = () => {
     setCurrentCity(inputCity); // Met à jour la ville saisie
   };
-  console.log(handleClick);
 
   return (
     <>
@@ -119,7 +120,7 @@ function App() {
             <section className="flex justify-between items-center glasseffect h-64 m:h-auto w-[45%] m:w-full m:mb-10 rounded-md p-8 text-lg">
               <div className="text-center w-20">
                 <p>Vent</p>
-                <p>{CurrentWeatherData.wind} km/h</p>
+                <p>{CurrentWeatherData.wind} m/s</p>
               </div>
               <div className="text-center w-20">
                 <p>Humidité</p>
@@ -127,7 +128,7 @@ function App() {
               </div>
               <div className="text-center w-20">
                 <p>Visibilité</p>
-                <p>{CurrentWeatherData.visibility} m</p>
+                <p>{CurrentWeatherData.visibility/1000} km</p>
               </div>
             </section>
           </div>
